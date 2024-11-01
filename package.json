@@ -36,6 +36,8 @@
   "type": "module",
   "dependencies": {
     "@sveltestrap/sveltestrap": "^6.2.7",
-    "aws4fetch": "^1.0.20"
+    "aws4fetch": "^1.0.20",
+    "fast-xml-parser": "^4.5.0",
+    "htmlparser2": "^9.1.0"
   }
 }

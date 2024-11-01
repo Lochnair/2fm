@@ -10,11 +10,6 @@ pages_build_output_dir = ".svelte-kit/cloudflare"
 # [placement]
 # mode = "smart"
 
-# Enable Workers Logs
-[observability]
-enabled = true
-head_sampling_rate = 1 # optional. default = 1.
-
 # Variable bindings. These are arbitrary, plaintext strings (similar to environment variables)
 # Docs:
 # - https://developers.cloudflare.com/pages/functions/bindings/#environment-variables

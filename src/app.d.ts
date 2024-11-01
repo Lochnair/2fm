@@ -3,9 +3,7 @@
 declare global {
 	namespace App {
 		interface Platform {
-			env: {
-				STORAGE_BUCKET: R2Bucket;
-			};
+			env?: Env;
 			cf: CfProperties;
 			ctx: ExecutionContext;
 		}

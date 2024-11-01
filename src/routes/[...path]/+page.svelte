@@ -1,5 +1,13 @@
 <script lang="ts">
+	import type { PageData } from './$types';
 	import { Table } from '@sveltestrap/sveltestrap';
+
+	export let { data }: { data: PageData } = $props();
+
+	function humanFileSize(size: number) {
+		var i = size == 0 ? 0 : Math.floor(Math.log(size) / Math.log(1024));
+		return +Number((size / Math.pow(1024, i)).toFixed(2)) + ' ' + ['B', 'kB', 'MB', 'GB', 'TB'][i];
+	}
 </script>
 
 <Table hover>
