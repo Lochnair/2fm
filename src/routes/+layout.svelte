@@ -1,13 +1,8 @@
 <script lang="ts">
 	import { Breadcrumb, BreadcrumbItem, Navbar, NavbarBrand } from '@sveltestrap/sveltestrap';
 	import { page } from '$app/stores';
-	interface Props {
-		children?: import('svelte').Snippet;
-	}
-
-	let { children }: Props = $props();
-
-	let path_components = $page.params.path.split('/');
+	let { children }: { children: Snippet } = $props();
+	let path_components = $derived($page.url.pathname.replace('/', '').split('/'));
 </script>
 
 <div class="container-fluid px-0">
@@ -28,16 +23,16 @@
 			<BreadcrumbItem>
 				<a href="/">Home</a>
 			</BreadcrumbItem>
-			{#each path_components as path}
+			{#each path_components as path, index}
 				<BreadcrumbItem>
-					<a href="#home">{path}</a>
+					<a href={'/' + path_components.slice(0, index + 1).join('/')}>{path}</a>
 				</BreadcrumbItem>
 			{/each}
 		</Breadcrumb>
 	</div>
 
 	<main class="row">
-		{@render children?.()}
+		{@render children()}
 	</main>
 
 	<footer class="row sticky-bottom text-center">
