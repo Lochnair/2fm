@@ -1,6 +1,11 @@
 <script lang="ts">
 	import { Breadcrumb, BreadcrumbItem, Navbar, NavbarBrand } from '@sveltestrap/sveltestrap';
 	import { page } from '$app/stores';
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
+
+	let { children }: Props = $props();
 
 	let path_components = $page.params.path.split('/');
 </script>
@@ -32,7 +37,7 @@
 	</div>
 
 	<main class="row">
-		<slot />
+		{@render children?.()}
 	</main>
 
 	<footer class="row sticky-bottom text-center">

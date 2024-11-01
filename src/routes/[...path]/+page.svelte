@@ -1,8 +1,9 @@
+<!-- @migration-task Error while migrating Svelte code: Cannot use `export let` in runes mode — use `$props()` instead -->
 <script lang="ts">
 	import type { PageData } from './$types';
 	import { Table } from '@sveltestrap/sveltestrap';
 
-	export let { data }: { data: PageData } = $props();
+	let { data }: { data: PageData } = $props();
 
 	function humanFileSize(size: number) {
 		var i = size == 0 ? 0 : Math.floor(Math.log(size) / Math.log(1024));
