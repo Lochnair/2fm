@@ -22,7 +22,12 @@
 			<Folder prefix={prefix.Prefix} />
 		{/each}
 		{#each data.objects.Contents as file}
-			<File name={file.Key} size={Number(file.Size)} timestamp={file.LastModified} />
+			<File
+				name={file.Name}
+				size={Number(file.Size)}
+				timestamp={file.LastModified}
+				url={file.Url}
+			/>
 		{/each}
 	</tbody>
 </Table>

@@ -1,24 +1,31 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
-
-	import { page } from '$app/stores';
-	let { name, size, timestamp }: { name: string; size: number; timestamp: Date } = $props();
+	let { name, size, timestamp, url }: { name: string; size: number; timestamp: Date; url: string } =
+		$props();
 
 	function humanFileSize(size: number) {
 		var i = size == 0 ? 0 : Math.floor(Math.log(size) / Math.log(1024));
 		return +Number((size / Math.pow(1024, i)).toFixed(2)) + ' ' + ['B', 'kB', 'MB', 'GB', 'TB'][i];
 	}
 
+	let link;
+
+	function handleRowClick(event) {
+		// Only trigger the link click if the click was NOT on the <a>
+		if (event.target.tagName !== 'A') {
+			link.click();
+		}
+	}
+
 	function navigate() {
-		const url = $page.url.href.replace(/\/?$/, '/') + name;
-		console.log(url);
-		goto(url);
+		if (link) {
+			link.click();
+		}
 	}
 </script>
 
-<tr onclick={navigate}>
+<tr data-uri={url} onclick={handleRowClick}>
 	<th class="bi bi-file-earmark-fill" scope="row"></th>
-	<td>{name}</td>
+	<td><a bind:this={link} target="_blank" rel="noopener" href={url}>{name}</a></td>
 	<td>{humanFileSize(size)}</td>
 	<td>{timestamp.toLocaleString()}</td>
 </tr>
