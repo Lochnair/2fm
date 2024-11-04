@@ -1,3 +1,4 @@
+import type { Request } from '@sveltejs/kit';
 import { S3_PUBLIC_URL, S3_URL } from '$env/static/private';
 
 export function GET(request: Request) {

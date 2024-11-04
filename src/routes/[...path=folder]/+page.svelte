@@ -23,6 +23,7 @@
 		{/each}
 		{#each data.objects.Contents as file}
 			<File
+				key={file.Key}
 				name={file.Name}
 				size={Number(file.Size)}
 				timestamp={file.LastModified}
