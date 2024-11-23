@@ -9,8 +9,10 @@
 	<div class="row">
 		<div class="col">
 			<header>
-				<Navbar color="dark">
-					<NavbarBrand style="color: white;" href="/">Lochnair's downloads</NavbarBrand>
+				<Navbar children={false} color="dark">
+					<NavbarBrand children={false} style="color: white;" href="/"
+						>Lochnair's downloads</NavbarBrand
+					>
 				</Navbar>
 			</header>
 		</div>
@@ -19,12 +21,12 @@
 
 <div class="container mt-3">
 	<div class="row">
-		<Breadcrumb divider="/">
-			<BreadcrumbItem>
+		<Breadcrumb children={false} divider="/">
+			<BreadcrumbItem children={false}>
 				<a href="/">Home</a>
 			</BreadcrumbItem>
 			{#each path_components as path, index}
-				<BreadcrumbItem>
+				<BreadcrumbItem children={false}>
 					<a href={'/' + path_components.slice(0, index + 1).join('/')}>{path}</a>
 				</BreadcrumbItem>
 			{/each}
