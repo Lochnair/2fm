@@ -19,12 +19,6 @@
 			link.click();
 		}
 	}
-
-	function navigate() {
-		if (link) {
-			link.click();
-		}
-	}
 </script>
 
 <tr onclick={handleRowClick}>
