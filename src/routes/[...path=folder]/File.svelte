@@ -24,7 +24,7 @@
 <tr onclick={handleRowClick}>
 	<th class="bi bi-file-earmark-fill" scope="row"></th>
 	<td
-		><a bind:this={link} download={name} target="_blank" rel="noopener" href="/{key}">{name}</a></td
+		><a bind:this={link} download={name} target="_blank" rel="noopener" href="./{name}">{name}</a></td
 	>
 	<td>{humanFileSize(size)}</td>
 	<td>{timestamp.toLocaleString()}</td>

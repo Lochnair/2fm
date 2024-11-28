@@ -4,8 +4,14 @@ import type { PageServerLoad } from './$types';
 import { XMLParser } from 'fast-xml-parser';
 import { S3_KEY, S3_SECRET, S3_URL } from '$env/static/private';
 
+export const trailingSlash = 'always';
+
+function ensureTrailingSlash(url: string): string {
+    return url.endsWith('/') ? url : url + '/';
+}
+
 function createR2UrlForBucket(path: string) {
-	return `${S3_URL}?list-type=2&prefix=${path ? path + '/' : ''}&delimiter=/`;
+	return `${S3_URL}?list-type=2&prefix=${path ? ensureTrailingSlash(path) : ''}&delimiter=/`;
 }
 
 export const load: PageServerLoad = async ({ params }) => {
