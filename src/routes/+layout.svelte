@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Breadcrumb, BreadcrumbItem, Navbar, NavbarBrand } from '@sveltestrap/sveltestrap';
+	import '@fontsource/varela';
 	import { page } from '$app/stores';
 	let { children }: { children: Snippet } = $props();
 	let path_components = $derived($page.url.pathname.replace('/', '').split('/'));
@@ -41,3 +42,9 @@
 		<span class="text-muted">Copyright © 2024 Lochnair</span>
 	</footer>
 </div>
+
+<style>
+	:global(body) {
+		font-family: 'Varela' !important;
+	}
+</style>
