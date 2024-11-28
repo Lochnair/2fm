@@ -38,6 +38,19 @@
 </tr>
 
 <style>
+	/* Default link styling for white backgrounds */
+	td > a {
+		color: #007bff; /* Bright blue for visibility */
+		text-decoration: none; /* Cleaner look */
+		transition: color 0.2s ease-in-out; /* Smooth hover effect */
+	}
+
+	/* Hover state for links */
+	td > a:hover {
+		color: #0056b3; /* Darker blue */
+		text-decoration: underline; /* Add underline for emphasis */
+	}
+
 	tr:hover {
 		cursor: pointer;
 	}
