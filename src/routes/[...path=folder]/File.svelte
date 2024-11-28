@@ -12,9 +12,9 @@
 		return +Number((size / Math.pow(1024, i)).toFixed(2)) + ' ' + ['B', 'kB', 'MB', 'GB', 'TB'][i];
 	}
 
-	let link;
+	let link: HTMLAnchorElement;
 
-	function handleRowClick(event) {
+	function handleRowClick(event: svelte.JSX.MouseEventHandler) {
 		// Only trigger the link click if the click was NOT on the <a>
 		if (event.target.tagName !== 'A') {
 			link.click();
