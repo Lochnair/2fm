@@ -13,6 +13,8 @@
 	import { page } from '$app/stores';
 	let { children }: { children: Snippet } = $props();
 	let path_components = $derived($page.url.pathname.replace('/', '').split('/'));
+	let path_components_len = $derived(path_components.length);
+
 	let theme = $state('light');
 
 	// Load the saved theme from localStorage on mount
@@ -45,11 +47,19 @@
 	<div class="row">
 		<Breadcrumb children={false} divider="/">
 			<BreadcrumbItem children={false}>
-				<a href="/">Home</a>
+				<a class="text-success" href="/">Home</a>
 			</BreadcrumbItem>
 			{#each path_components as path, index}
-				<BreadcrumbItem children={false}>
-					<a href={'/' + path_components.slice(0, index + 1).join('/')}>{path}</a>
+				<BreadcrumbItem data-index={index} data-path={path} children={false}>
+					{#if path_components_len - 1 == index}
+						<a class="text-muted" href={'/' + path_components.slice(0, index + 1).join('/')}
+							>{path}</a
+						>
+					{:else}
+						<a class="text-success" href={'/' + path_components.slice(0, index + 1).join('/')}
+							>{path}</a
+						>
+					{/if}
 				</BreadcrumbItem>
 			{/each}
 		</Breadcrumb>
