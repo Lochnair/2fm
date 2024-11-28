@@ -1,4 +1,3 @@
-<!-- @migration-task Error while migrating Svelte code: Cannot use `export let` in runes mode — use `$props()` instead -->
 <script lang="ts">
 	import type { PageData } from './$types';
 	import { Table } from '@sveltestrap/sveltestrap';
@@ -18,10 +17,10 @@
 		</tr>
 	</thead>
 	<tbody>
-		{#each data.objects.CommonPrefixes as prefix}
-			<Folder prefix={prefix.Prefix} />
+		{#each data.commonPrefixes as prefix}
+			<Folder prefix={prefix} />
 		{/each}
-		{#each data.objects.Contents as file}
+		{#each data.contents as file}
 			<File
 				key={file.Key}
 				name={file.Name}

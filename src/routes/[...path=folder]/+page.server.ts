@@ -20,29 +20,51 @@ export const load: PageServerLoad = async ({ params }) => {
 		secretAccessKey: S3_SECRET
 	});
 
-	const ListObjectsV2Result = await S3.fetch(createR2UrlForBucket(params.path));
-	const result = await ListObjectsV2Result.text();
+	const response = await S3.fetch(createR2UrlForBucket(params.path));
+
+	if (response.status != 200) {
+		throw new Error("Something went wrong retrieving object list from S3");
+	}
+
+	const result = await response.text();
 	const parser = new XMLParser();
 	const jObj = parser.parse(result);
 
-	console.log(jObj.ListBucketResult.Contents);
-
-	// The S3 API returns an object for Contents if there's only one object
-	// To avoid having to deal with it in frontend code, check if it's an array,
-	// and if not, move the object to an array instead
-	if (!Array.isArray(jObj.ListBucketResult.Contents)) {
-		const tmp = jObj.ListBucketResult.Contents;
-		jObj.ListBucketResult.Contents = [tmp];
-	}
+	console.log('From API:');
+	console.log(jObj.ListBucketResult);
 
 	const prefixLength = jObj.ListBucketResult.Prefix.length;
 	const publicUrl = !S3_PUBLIC_URL ? S3_URL : S3_PUBLIC_URL;
-	jObj.ListBucketResult.Contents.forEach(function (object) {
-		object.Name = object.Key.slice(prefixLength);
-		object.Url = `${publicUrl}${object.Key}`;
-	});
 
-	return {
-		objects: jObj.ListBucketResult
-	};
+	// The S3 API returns an object for if there's only one object
+	// To avoid having to deal with it in frontend code, check if it's an array,
+	// and if not, move the object to an array instead
+	let commonPrefixes = jObj.ListBucketResult.CommonPrefixes
+		? Array.isArray(jObj.ListBucketResult.CommonPrefixes)
+			? jObj.ListBucketResult.CommonPrefixes
+			: [jObj.ListBucketResult.CommonPrefixes]
+		: [];
+
+	let contents = jObj.ListBucketResult.Contents
+	? Array.isArray(jObj.ListBucketResult.Contents)
+		? jObj.ListBucketResult.Contents
+		: [jObj.ListBucketResult.Contents]
+	: [];
+
+	commonPrefixes = commonPrefixes.map((p: { Prefix: string }) =>
+		p.Prefix.slice(prefixLength)
+	);
+
+	contents = contents.map((c: any) => ({...c, Name: c.Key.slice(prefixLength), Url:  `${publicUrl}${c.Key}`}))
+
+	console.log('Result:');
+
+	const data = {
+		commonPrefixes: commonPrefixes,
+		contents: contents
+	}
+
+	console.log(data);
+
+	return data;
 };
