@@ -6,17 +6,16 @@ While I'm using the free Cloudflare R2 storage, it's using aws4fetch under the h
 though that has not been tested (the R2 API doesn't allow me to list files/folders as I want, so the S3 API was the only choice anyway).
 
 ## Warning about sveltestrap
-Since it's a new project I've gone for Svelte 5, however there are changes that broke some svelestrap components (see https://github.com/sveltestrap/sveltestrap/issues/100)
-So I've mitigated this locally for now by replacing "children" with "content" as mentioned in the issue.
-
-The pnpm lockfile will refer to my local copy of sveltestrap with the fixes, so if the install doesn't work, remove the lockfile and try again.
+sveltestrap has does not quite work with Svelte 5 out-of-the-box, so I've had to add `children={false}` to any sveltestrap component that uses it.
 
 ## Development
 Install the dependencies with `pnpm i` and start the local server with `pnpm run dev`
 
 ## Deployment
-If you've got your Cloudflare Page set up with the project, simply run `pnpm run deploy`
+I've moved to the zero-config @sveltejs/adapter-auto to keep the project supported for multiple platforms.
+The .env.example file shows which variable to set for some of the providers if needed, but you _shouldn't_ need to do so.
 
-Currently I'm using the cloudflare adapter for Svelte, so you might want to use another adapter for your host,
-or possibly `adapter-auto` which should choose the right one automatically. I'm looking into how `adapter-auto` could be used instead as the default for the project,
-so it'll wherever the user would like to.
+But in my case it seemed necessary, as I deploy using wrangler, and I assume the way it works is intended for pushing to Git and then
+having your provider pull that code and deploy it, I'm not quite sure.
+
+And of course, set your S3 API keys and the URL in the environment file and that should be all.

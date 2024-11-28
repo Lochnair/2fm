@@ -36,6 +36,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@dotenvx/dotenvx": "^1.25.1",
     "@fontsource/varela": "^5.1.0",
     "@sveltestrap/sveltestrap": "^6.2.7",
     "aws4fetch": "^1.0.20",
