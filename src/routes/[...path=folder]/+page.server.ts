@@ -2,7 +2,7 @@
 import { AwsClient } from 'aws4fetch';
 import type { PageServerLoad } from './$types';
 import { XMLParser } from 'fast-xml-parser';
-import { S3_KEY, S3_PUBLIC_URL, S3_SECRET, S3_URL } from '$env/static/private';
+import { S3_KEY, S3_SECRET, S3_URL } from '$env/static/private';
 
 function createR2UrlForBucket(path: string) {
 	return `${S3_URL}?list-type=2&prefix=${path ? path + '/' : ''}&delimiter=/`;
@@ -34,7 +34,6 @@ export const load: PageServerLoad = async ({ params }) => {
 	console.log(jObj.ListBucketResult);
 
 	const prefixLength = jObj.ListBucketResult.Prefix.length;
-	const publicUrl = !S3_PUBLIC_URL ? S3_URL : S3_PUBLIC_URL;
 
 	// The S3 API returns an object for if there's only one object
 	// To avoid having to deal with it in frontend code, check if it's an array,
@@ -55,7 +54,7 @@ export const load: PageServerLoad = async ({ params }) => {
 		p.Prefix.slice(prefixLength)
 	);
 
-	contents = contents.map((c: any) => ({...c, Name: c.Key.slice(prefixLength), Url:  `${publicUrl}${c.Key}`}))
+	contents = contents.map((c: any) => ({...c, Name: c.Key.slice(prefixLength)}))
 
 	console.log('Result:');
 

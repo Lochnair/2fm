@@ -3,9 +3,8 @@
 		key,
 		name,
 		size,
-		timestamp,
-		url
-	}: { key: string; name: string; size: number; timestamp: Date; url: string } = $props();
+		timestamp
+	}: { key: string; name: string; size: number; timestamp: Date } = $props();
 
 	function humanFileSize(size: number) {
 		var i = size == 0 ? 0 : Math.floor(Math.log(size) / Math.log(1024));
@@ -28,7 +27,7 @@
 	}
 </script>
 
-<tr data-uri={url} onclick={handleRowClick}>
+<tr onclick={handleRowClick}>
 	<th class="bi bi-file-earmark-fill" scope="row"></th>
 	<td
 		><a bind:this={link} download={name} target="_blank" rel="noopener" href="/{key}">{name}</a></td

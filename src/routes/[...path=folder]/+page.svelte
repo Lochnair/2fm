@@ -26,7 +26,6 @@
 				name={file.Name}
 				size={Number(file.Size)}
 				timestamp={file.LastModified}
-				url={file.Url}
 			/>
 		{/each}
 	</tbody>
