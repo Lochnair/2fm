@@ -1,24 +1,45 @@
 <script lang="ts">
-	import { Breadcrumb, BreadcrumbItem, Navbar, NavbarBrand } from '@sveltestrap/sveltestrap';
+	import { onMount } from 'svelte';
+	import '../styles/global.scss';
 	import '@fontsource/varela';
+	import {
+		Breadcrumb,
+		BreadcrumbItem,
+		Button,
+		Nav,
+		Navbar,
+		NavbarBrand
+	} from '@sveltestrap/sveltestrap';
 	import { page } from '$app/stores';
 	let { children }: { children: Snippet } = $props();
 	let path_components = $derived($page.url.pathname.replace('/', '').split('/'));
+	let theme = $state('light');
+
+	// Load the saved theme from localStorage on mount
+	onMount(() => {
+		const savedTheme = localStorage.getItem('theme') || 'light';
+		theme = savedTheme;
+		document.documentElement.setAttribute('data-bs-theme', theme);
+	});
+
+	// Toggle theme and save to localStorage
+	const toggleTheme = () => {
+		theme = theme === 'light' ? 'dark' : 'light';
+		document.documentElement.setAttribute('data-bs-theme', theme);
+		localStorage.setItem('theme', theme);
+	};
 </script>
 
-<div class="container-fluid px-0">
-	<div class="row">
-		<div class="col">
-			<header>
-				<Navbar children={false} color="dark">
-					<NavbarBrand children={false} style="color: white;" href="/"
-						>Lochnair's downloads</NavbarBrand
-					>
-				</Navbar>
-			</header>
-		</div>
-	</div>
-</div>
+<header>
+	<Navbar children={false} color="dark">
+		<NavbarBrand children={false} style="color: white;" href="/">Lochnair's downloads</NavbarBrand>
+		<Nav class="ms-auto" navbar>
+			<Button class="ms-auto" on:click={toggleTheme} outline={theme === 'dark'} color="secondary"
+				>{theme === 'light' ? '🌙' : '☀️'}</Button
+			>
+		</Nav>
+	</Navbar>
+</header>
 
 <div class="container mt-3">
 	<div class="row">
