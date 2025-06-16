@@ -42,6 +42,6 @@
     "aws4fetch": "^1.0.20",
     "bootstrap": "^5.3.3",
     "fast-xml-parser": "^4.5.0",
-    "htmlparser2": "^9.1.0"
+    "htmlparser2": "^10.0.0"
   }
 }
