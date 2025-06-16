@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@dotenvx/dotenvx':
         specifier: ^1.25.1
-        version: 1.25.1
+        version: 1.44.2
       '@fontsource/varela':
         specifier: ^5.1.0
         version: 5.1.0
@@ -139,12 +139,12 @@ packages:
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
     engines: {node: '>=12'}
 
-  '@dotenvx/dotenvx@1.25.1':
-    resolution: {integrity: sha512-oMjICTJpGPYRO3EIBwVIm18IUSbe/yOVf+1HQh7xFXABEmA6z06qJVjAP4b7RO9jJaLIEQBOW59zjZOpjjUgAA==}
+  '@dotenvx/dotenvx@1.44.2':
+    resolution: {integrity: sha512-2C44+G2dch4cB6zw7+oGQ9VcFQuuVhc5xOzfVvY7iUEj2PRhiVMIB6SpNMK1V5TvpdqrAqCYFjclK18Mh9vwNQ==}
     hasBin: true
 
-  '@ecies/ciphers@0.2.1':
-    resolution: {integrity: sha512-ezMihhjW24VNK/2qQR7lH8xCQY24nk0XHF/kwJ1OuiiY5iEwQXOcKVSy47fSoHPRG8gVGXcK5SgtONDk5xMwtQ==}
+  '@ecies/ciphers@0.2.3':
+    resolution: {integrity: sha512-tapn6XhOueMwht3E2UzY0ZZjYokdaw9XtL9kEyjhQ/Fb9vL9xTFbOaI+fV0AWvTpYu4BNloC6getKW6NtSg4mA==}
     engines: {bun: '>=1', deno: '>=2', node: '>=16'}
     peerDependencies:
       '@noble/ciphers': ^1.0.0
@@ -675,20 +675,16 @@ packages:
   '@jridgewell/trace-mapping@0.3.9':
     resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
 
-  '@noble/ciphers@1.1.1':
-    resolution: {integrity: sha512-2aCM5qHImP1RPm+0UqEyK6B0bP8h1c0cOIzIT+B6HLK2bAvXR3it3/igJ0Ymsa0iaXrYilaCCEPTEWq03otfXg==}
+  '@noble/ciphers@1.3.0':
+    resolution: {integrity: sha512-2I0gnIVPtfnMw9ee9h1dJG7tp81+8Ob3OJb3Mv37rx5L40/b0i7djjCVvGOVqc9AEIQyvyu1i6ypKdFw8R8gQw==}
     engines: {node: ^14.21.3 || >=16}
 
-  '@noble/curves@1.7.0':
-    resolution: {integrity: sha512-UTMhXK9SeDhFJVrHeUJ5uZlI6ajXg10O6Ddocf9S6GjbSBVZsJo88HzKwXznNfGpMTRDyJkqMjNDPYgf0qFWnw==}
+  '@noble/curves@1.9.2':
+    resolution: {integrity: sha512-HxngEd2XUcg9xi20JkwlLCtYwfoFw4JGkuZpT+WlsPD4gB/cxkvTD8fSsoAnphGZhFdZYKeQIPCuFlWPm1uE0g==}
     engines: {node: ^14.21.3 || >=16}
 
-  '@noble/hashes@1.6.0':
-    resolution: {integrity: sha512-YUULf0Uk4/mAA89w+k3+yUYh6NrEvxZa5T6SY3wlMvE2chHkxFUUIDI8/XW1QSC357iA5pSnqt7XEhvFOqmDyQ==}
-    engines: {node: ^14.21.3 || >=16}
-
-  '@noble/hashes@1.6.1':
-    resolution: {integrity: sha512-pq5D8h10hHBjyqX+cfBm0i8JUXJ0UhczFc4r74zbuT9XgewFo2E3J1cOaGtdZynILNmQ685YWGzGE1Zv6io50w==}
+  '@noble/hashes@1.8.0':
+    resolution: {integrity: sha512-jCs9ldd7NwzpgXDIf6P3+NrHh9/sD6CQdxHyjQI+h/6rDNo88ypBxxz45UDuZHz9r3tNz7N/VInSVoVdtXEI4A==}
     engines: {node: ^14.21.3 || >=16}
 
   '@nodelib/fs.scandir@2.1.5':
@@ -1174,12 +1170,12 @@ packages:
   domutils@3.2.2:
     resolution: {integrity: sha512-6kZKyUajlDuqlHKVX1w7gyslj9MPIXzIFiz/rGu35uC1wMi+kMhQwGhl4lt9unC9Vb9INnY9Z3/ZA3+FhASLaw==}
 
-  dotenv@16.4.5:
-    resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==}
+  dotenv@16.5.0:
+    resolution: {integrity: sha512-m/C+AwOAr9/W1UOIZUo232ejMNnJAJtYQjUbHoNTBNTJSvqzzDh7vnrei3o3r3m9blf6ZoDkvcw0VmozNRFJxg==}
     engines: {node: '>=12'}
 
-  eciesjs@0.4.12:
-    resolution: {integrity: sha512-DGejvMCihsRAmKRFQiL6KZDE34vWVd0gvXlykFq1aEzJy/rD65AVyAIUZKZOvgvaP9ATQRcHGEZV5DfgrgjA4w==}
+  eciesjs@0.4.15:
+    resolution: {integrity: sha512-r6kEJXDKecVOCj2nLMuXK/FCPeurW33+3JRpfXVbjLja3XUYFfD9I/JBreH6sUyzcm3G/YQboBjMla6poKeSdA==}
     engines: {bun: '>=1', deno: '>=2', node: '>=16'}
 
   entities@4.5.0:
@@ -2042,21 +2038,21 @@ snapshots:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
 
-  '@dotenvx/dotenvx@1.25.1':
+  '@dotenvx/dotenvx@1.44.2':
     dependencies:
       commander: 11.1.0
-      dotenv: 16.4.5
-      eciesjs: 0.4.12
+      dotenv: 16.5.0
+      eciesjs: 0.4.15
       execa: 5.1.1
-      fdir: 6.4.2(picomatch@4.0.2)
+      fdir: 6.4.6(picomatch@4.0.2)
       ignore: 5.3.2
       object-treeify: 1.1.33
       picomatch: 4.0.2
       which: 4.0.0
 
-  '@ecies/ciphers@0.2.1(@noble/ciphers@1.1.1)':
+  '@ecies/ciphers@0.2.3(@noble/ciphers@1.3.0)':
     dependencies:
-      '@noble/ciphers': 1.1.1
+      '@noble/ciphers': 1.3.0
 
   '@esbuild-plugins/node-globals-polyfill@0.2.3(esbuild@0.17.19)':
     dependencies:
@@ -2368,15 +2364,13 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@noble/ciphers@1.1.1': {}
+  '@noble/ciphers@1.3.0': {}
 
-  '@noble/curves@1.7.0':
+  '@noble/curves@1.9.2':
     dependencies:
-      '@noble/hashes': 1.6.0
+      '@noble/hashes': 1.8.0
 
-  '@noble/hashes@1.6.0': {}
-
-  '@noble/hashes@1.6.1': {}
+  '@noble/hashes@1.8.0': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -2816,14 +2810,14 @@ snapshots:
       domelementtype: 2.3.0
       domhandler: 5.0.3
 
-  dotenv@16.4.5: {}
+  dotenv@16.5.0: {}
 
-  eciesjs@0.4.12:
+  eciesjs@0.4.15:
     dependencies:
-      '@ecies/ciphers': 0.2.1(@noble/ciphers@1.1.1)
-      '@noble/ciphers': 1.1.1
-      '@noble/curves': 1.7.0
-      '@noble/hashes': 1.6.1
+      '@ecies/ciphers': 0.2.3(@noble/ciphers@1.3.0)
+      '@noble/ciphers': 1.3.0
+      '@noble/curves': 1.9.2
+      '@noble/hashes': 1.8.0
 
   entities@4.5.0: {}
 
