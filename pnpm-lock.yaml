@@ -62,10 +62,10 @@ importers:
         version: 15.15.0
       prettier:
         specifier: ^3.4.1
-        version: 3.4.1
+        version: 3.5.3
       prettier-plugin-svelte:
         specifier: ^3.3.2
-        version: 3.3.2(prettier@3.4.1)(svelte@5.2.10)
+        version: 3.3.2(prettier@3.5.3)(svelte@5.2.10)
       sass:
         specifier: ^1.81.0
         version: 1.81.0
@@ -1669,8 +1669,8 @@ packages:
       prettier: ^3.0.0
       svelte: ^3.2.0 || ^4.0.0-next.0 || ^5.0.0-next.0
 
-  prettier@3.4.1:
-    resolution: {integrity: sha512-G+YdqtITVZmOJje6QkXQWzl3fSfMxFwm1tjTyo9exhkmWSqC4Yhd1+lug++IlR2mvRVAxEDDWYkQdeSztajqgg==}
+  prettier@3.5.3:
+    resolution: {integrity: sha512-QQtaxnoDJeAkDvDKWCLiwIXkTgRhwYDEQCghU9Z6q03iyek/rxRh/2lC3HB7P8sWT2xC/y5JDctPLBIGzHKbhw==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -3335,12 +3335,12 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier-plugin-svelte@3.3.2(prettier@3.4.1)(svelte@5.2.10):
+  prettier-plugin-svelte@3.3.2(prettier@3.5.3)(svelte@5.2.10):
     dependencies:
-      prettier: 3.4.1
+      prettier: 3.5.3
       svelte: 5.2.10
 
-  prettier@3.4.1: {}
+  prettier@3.5.3: {}
 
   printable-characters@1.0.42: {}
 
