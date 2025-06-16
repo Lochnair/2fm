@@ -13,7 +13,7 @@ importers:
         version: 1.44.2
       '@fontsource/varela':
         specifier: ^5.1.0
-        version: 5.1.0
+        version: 5.2.6
       '@sveltestrap/sveltestrap':
         specifier: ^7.0.0
         version: 7.1.0(svelte@5.2.10)
@@ -653,8 +653,8 @@ packages:
     resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
     engines: {node: '>=14'}
 
-  '@fontsource/varela@5.1.0':
-    resolution: {integrity: sha512-a/wAkxvkBBSTlNzF65jHRW5s+Ar0x4lICCmqykUnhU5S7or2sYmHGd8ZCEeg23H+mimbiid8UP9xk2yocbBL2Q==}
+  '@fontsource/varela@5.2.6':
+    resolution: {integrity: sha512-VeObFy54sWGy9EOQpk8MxiY782dSE/zCpNqIWx1zHLs9mhIRE8gukhtGtVmayOE2LIiIKMKCs5z1huJAPqP1wg==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -2406,7 +2406,7 @@ snapshots:
 
   '@fastify/busboy@2.1.1': {}
 
-  '@fontsource/varela@5.1.0': {}
+  '@fontsource/varela@5.2.6': {}
 
   '@humanfs/core@0.19.1': {}
 
