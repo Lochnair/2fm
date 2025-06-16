@@ -38,7 +38,7 @@
   "dependencies": {
     "@dotenvx/dotenvx": "^1.25.1",
     "@fontsource/varela": "^5.1.0",
-    "@sveltestrap/sveltestrap": "^6.2.7",
+    "@sveltestrap/sveltestrap": "^7.0.0",
     "aws4fetch": "^1.0.20",
     "bootstrap": "^5.3.3",
     "fast-xml-parser": "^4.5.0",
