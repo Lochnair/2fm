@@ -15,8 +15,8 @@ importers:
         specifier: ^5.1.0
         version: 5.1.0
       '@sveltestrap/sveltestrap':
-        specifier: ^6.2.7
-        version: 6.2.8(svelte@5.2.10)
+        specifier: ^7.0.0
+        version: 7.1.0(svelte@5.2.10)
       aws4fetch:
         specifier: ^1.0.20
         version: 1.0.20
@@ -902,8 +902,8 @@ packages:
       svelte: ^5.0.0
       vite: ^6.0.0
 
-  '@sveltestrap/sveltestrap@6.2.8':
-    resolution: {integrity: sha512-uOcY3xsHtJ/VE0Z8A5JrJIq4kW/OOQcct5JtJW5ug646Re2pzQH08P7RjSp04UUjmR/RlC3ugVfiGss8idHG7A==}
+  '@sveltestrap/sveltestrap@7.1.0':
+    resolution: {integrity: sha512-TpIx25kqLV+z+VD3yfqYayOI1IaCeWFbT0uqM6NfA4vQgDs9PjFwmjkU4YEAlV/ngs9e7xPmaRWE7lkrg4Miow==}
     peerDependencies:
       svelte: ^4.0.0 || ^5.0.0 || ^5.0.0-next.0
 
@@ -2517,7 +2517,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@sveltestrap/sveltestrap@6.2.8(svelte@5.2.10)':
+  '@sveltestrap/sveltestrap@7.1.0(svelte@5.2.10)':
     dependencies:
       '@popperjs/core': 2.11.8
       svelte: 5.2.10
