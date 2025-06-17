@@ -22,7 +22,7 @@ importers:
         version: 1.0.20
       bootstrap:
         specifier: ^5.3.3
-        version: 5.3.6(@popperjs/core@2.11.8)
+        version: 5.3.7(@popperjs/core@2.11.8)
       fast-xml-parser:
         specifier: ^5.0.0
         version: 5.2.5
@@ -1038,8 +1038,8 @@ packages:
   blake3-wasm@2.1.5:
     resolution: {integrity: sha512-F1+K8EbfOZE49dtoPtmxUQrpXaBIl3ICvasLh+nJta0xkz+9kF/7uet9fLnwKqhDrmj6g+6K3Tw9yQPUg2ka5g==}
 
-  bootstrap@5.3.6:
-    resolution: {integrity: sha512-jX0GAcRzvdwISuvArXn3m7KZscWWFAf1MKBcnzaN02qWMb3jpMoUX4/qgeiGzqyIb4ojulRzs89UCUmGcFSzTA==}
+  bootstrap@5.3.7:
+    resolution: {integrity: sha512-7KgiD8UHjfcPBHEpDNg+zGz8L3LqR3GVwqZiBRFX04a1BCArZOz1r2kjly2HQ0WokqTO0v1nF+QAt8dsW4lKlw==}
     peerDependencies:
       '@popperjs/core': ^2.11.8
 
@@ -2620,7 +2620,7 @@ snapshots:
 
   blake3-wasm@2.1.5: {}
 
-  bootstrap@5.3.6(@popperjs/core@2.11.8):
+  bootstrap@5.3.7(@popperjs/core@2.11.8):
     dependencies:
       '@popperjs/core': 2.11.8
 
