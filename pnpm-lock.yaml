@@ -32,13 +32,13 @@ importers:
     devDependencies:
       '@cloudflare/workers-types':
         specifier: ^4.20251229.0
-        version: 4.20251229.0
+        version: 4.20251230.0
       '@sveltejs/adapter-auto':
         specifier: ^7.0.0
         version: 7.0.0(@sveltejs/kit@2.49.2(@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.46.1)(vite@7.3.0(sass@1.97.1)))(svelte@5.46.1)(vite@7.3.0(sass@1.97.1)))
       '@sveltejs/adapter-cloudflare':
         specifier: ^7.2.4
-        version: 7.2.4(@sveltejs/kit@2.49.2(@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.46.1)(vite@7.3.0(sass@1.97.1)))(svelte@5.46.1)(vite@7.3.0(sass@1.97.1)))(wrangler@4.54.0(@cloudflare/workers-types@4.20251229.0))
+        version: 7.2.4(@sveltejs/kit@2.49.2(@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.46.1)(vite@7.3.0(sass@1.97.1)))(svelte@5.46.1)(vite@7.3.0(sass@1.97.1)))(wrangler@4.54.0(@cloudflare/workers-types@4.20251230.0))
       '@sveltejs/kit':
         specifier: ^2.49.2
         version: 2.49.2(@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.46.1)(vite@7.3.0(sass@1.97.1)))(svelte@5.46.1)(vite@7.3.0(sass@1.97.1))
@@ -86,7 +86,7 @@ importers:
         version: 7.3.0(sass@1.97.1)
       wrangler:
         specifier: ^4.54.0
-        version: 4.54.0(@cloudflare/workers-types@4.20251229.0)
+        version: 4.54.0(@cloudflare/workers-types@4.20251230.0)
 
 packages:
 
@@ -133,8 +133,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@cloudflare/workers-types@4.20251229.0':
-    resolution: {integrity: sha512-LgzxDZaT9bQhycQInf7S/fcZCQRTvWWQPE9xnEyedI+CXxWsXAD7hg84kvVyr+KUz+W9Oblzo75g6XZ3HdI5Yg==}
+  '@cloudflare/workers-types@4.20251230.0':
+    resolution: {integrity: sha512-mTpeOLyC088fqC0hDMFFErq0C/4tLFTDgYgkBhpbM7YeoASVErhnR5irvnHFarvJ5NWXa8jY08bSaRIG8V8PAA==}
 
   '@cspotcode/source-map-support@0.8.1':
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -1872,7 +1872,7 @@ snapshots:
   '@cloudflare/workerd-windows-64@1.20251210.0':
     optional: true
 
-  '@cloudflare/workers-types@4.20251229.0': {}
+  '@cloudflare/workers-types@4.20251230.0': {}
 
   '@cspotcode/source-map-support@0.8.1':
     dependencies:
@@ -2378,12 +2378,12 @@ snapshots:
     dependencies:
       '@sveltejs/kit': 2.49.2(@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.46.1)(vite@7.3.0(sass@1.97.1)))(svelte@5.46.1)(vite@7.3.0(sass@1.97.1))
 
-  '@sveltejs/adapter-cloudflare@7.2.4(@sveltejs/kit@2.49.2(@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.46.1)(vite@7.3.0(sass@1.97.1)))(svelte@5.46.1)(vite@7.3.0(sass@1.97.1)))(wrangler@4.54.0(@cloudflare/workers-types@4.20251229.0))':
+  '@sveltejs/adapter-cloudflare@7.2.4(@sveltejs/kit@2.49.2(@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.46.1)(vite@7.3.0(sass@1.97.1)))(svelte@5.46.1)(vite@7.3.0(sass@1.97.1)))(wrangler@4.54.0(@cloudflare/workers-types@4.20251230.0))':
     dependencies:
-      '@cloudflare/workers-types': 4.20251229.0
+      '@cloudflare/workers-types': 4.20251230.0
       '@sveltejs/kit': 2.49.2(@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.46.1)(vite@7.3.0(sass@1.97.1)))(svelte@5.46.1)(vite@7.3.0(sass@1.97.1))
       worktop: 0.8.0-next.18
-      wrangler: 4.54.0(@cloudflare/workers-types@4.20251229.0)
+      wrangler: 4.54.0(@cloudflare/workers-types@4.20251230.0)
 
   '@sveltejs/kit@2.49.2(@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.46.1)(vite@7.3.0(sass@1.97.1)))(svelte@5.46.1)(vite@7.3.0(sass@1.97.1))':
     dependencies:
@@ -3348,7 +3348,7 @@ snapshots:
       mrmime: 2.0.1
       regexparam: 3.0.0
 
-  wrangler@4.54.0(@cloudflare/workers-types@4.20251229.0):
+  wrangler@4.54.0(@cloudflare/workers-types@4.20251230.0):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.4.1
       '@cloudflare/unenv-preset': 2.7.13(unenv@2.0.0-rc.24)(workerd@1.20251210.0)
@@ -3359,7 +3359,7 @@ snapshots:
       unenv: 2.0.0-rc.24
       workerd: 1.20251210.0
     optionalDependencies:
-      '@cloudflare/workers-types': 4.20251229.0
+      '@cloudflare/workers-types': 4.20251230.0
       fsevents: 2.3.3
     transitivePeerDependencies:
       - bufferutil
