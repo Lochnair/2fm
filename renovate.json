@@ -92,7 +92,7 @@
   ],
   "commitBody": "Automated update by Renovate Bot",
   "baseBranches": [
-    "main"
+    "master"
   ],
   "enabledManagers": [
     "npm",
