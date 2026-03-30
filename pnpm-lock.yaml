@@ -24,11 +24,11 @@ importers:
         specifier: ^5.3.8
         version: 5.3.8(@popperjs/core@2.11.8)
       fast-xml-parser:
-        specifier: ^5.3.3
+        specifier: ^5.5.9
         version: 5.5.9
       htmlparser2:
-        specifier: ^10.0.0
-        version: 10.1.0
+        specifier: ^12.0.0
+        version: 12.0.0
     devDependencies:
       '@cloudflare/workers-types':
         specifier: ^4.20260329.1
