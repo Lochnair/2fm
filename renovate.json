@@ -1,19 +1,105 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
+    "config:recommended",
+    ":semanticCommits",
+    ":semanticPrefixFixDepsChoreOthers",
+    ":prHourlyLimit2",
+    ":prConcurrentLimit10",
+    ":maintainLockFilesWeekly",
+    ":dependencyDashboard"
   ],
+  "schedule": [
+    "after 8am and before 6pm on monday to friday"
+  ],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": [
+      "before 6am on monday"
+    ],
+    "commitMessageAction": "maintain pnpm lockfiles"
+  },
+  "rangeStrategy": "replace",
+  "pnpm": {
+    "enabled": true,
+    "postUpdateOptions": [
+      "pnpmDedupe"
+    ]
+  },
+  "docker": {
+    "enabled": true,
+    "pinDigests": true
+  },
+  "github-actions": {
+    "enabled": true
+  },
   "packageRules": [
     {
-      "matchUpdateTypes": ["minor", "patch"],
-      "matchCurrentVersion": "!/^0/",
-      "automerge": true
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "digest"
+      ],
+      "automerge": true,
+      "automergeType": "branch"
     },
     {
-      "dependencyDashboardApproval": true,
-      "matchUpdateTypes": [
-        "major"
+      "groupName": "Svelte ecosystem",
+      "matchPackageNames": [
+        "svelte",
+        "svelte-check"
+      ],
+      "matchPackagePatterns": [
+        "^@sveltejs/",
+        "plugin-svelte",
+        "sveltestrap"
+      ]
+    },
+    {
+      "groupName": "Cloudflare & Workers",
+      "matchPackageNames": [
+        "wrangler"
+      ],
+      "matchPackagePatterns": [
+        "^@cloudflare/"
+      ]
+    },
+    {
+      "groupName": "Build & tooling",
+      "matchPackageNames": [
+        "vite",
+        "typescript",
+        "sass"
+      ]
+    },
+    {
+      "groupName": "Linters & formatters",
+      "matchPackageNames": [
+        "eslint",
+        "prettier",
+        "globals"
+      ],
+      "matchPackagePatterns": [
+        "^eslint-",
+        "^prettier-",
+        "^@types/eslint",
+        "^typescript-eslint"
+      ]
+    },
+    {
+      "groupName": "GitHub Actions",
+      "matchManagers": [
+        "github-actions"
       ]
     }
+  ],
+  "commitBody": "Automated update by Renovate Bot",
+  "baseBranches": [
+    "main"
+  ],
+  "enabledManagers": [
+    "npm",
+    "dockerfile",
+    "github-actions"
   ]
 }
