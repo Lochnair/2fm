@@ -20,12 +20,9 @@
     "commitMessageAction": "maintain pnpm lockfiles"
   },
   "rangeStrategy": "replace",
-  "pnpm": {
-    "enabled": true,
-    "postUpdateOptions": [
-      "pnpmDedupe"
-    ]
-  },
+  "postUpdateOptions": [
+    "pnpmDedupe"
+  ],
   "docker": {
     "enabled": true,
     "pinDigests": true
